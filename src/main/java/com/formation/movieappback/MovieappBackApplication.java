@@ -62,7 +62,6 @@ public class MovieappBackApplication {
             wonka.setVideo(false);
             wonka.setGenres(List.of(actionGenre)); // Assigne les genres ici si nécessaire
 
-            // Wish, Asha et la bonne étoile
             MovieEntity wishAsha = new MovieEntity();
             wishAsha.setId(3L);
             wishAsha.setTitle("Wish, Asha et la bonne étoile");
