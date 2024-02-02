@@ -95,6 +95,16 @@ public class MovieappBackApplication {
             theMarvels.setVideo(false);
             theMarvels.setGenres(List.of(actionGenre, scienceGenre)); // Ajoute les genres ici si nécessaire
 
+            MovieEntity theBatman = new MovieEntity();
+            theBatman.setId(6L);
+            theBatman.setTitle("The Batman");
+            theBatman.setOverview("Dans une ville où la corruption règne en maître, un justicier masqué se lève pour défendre les plus démunis : Batman. Mais il se heurte à un mystère plus profond qu'il n'aurait pu l'imaginer, et doit faire face à des ennemis plus dangereux qu'il n'aurait pu le prévoir.");
+            theBatman.setBackdropPath("/5V9RZ5mG3GLRl8Z5l6D5zRv3E9R.jpg");
+            theBatman.setPosterPath("/z2UtGA1WggESspi6KOXV6z6O5K.jpg");
+            theBatman.setVoteAverage(7.8);
+            theBatman.setReleaseDate(LocalDate.of(2022, 3, 2));
+            theBatman.setVideo(false);
+            theBatman.setGenres(List.of(actionGenre, dramaGenre)); // Ajoute les genres ici si nécessaire
 
             // Sauvegarde des films dans la base de données
             movieRepository.save(aquaman);
@@ -102,6 +112,7 @@ public class MovieappBackApplication {
             movieRepository.save(wishAsha);
             movieRepository.save(migration);
             movieRepository.save(theMarvels);
+            movieRepository.save(theBatman);
         };
     }
 }
