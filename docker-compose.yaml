@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  back:
+    image: epita/movie-app-back
+    ports:
+      - "1234:8080"
+    env_file:
+      - .env-docker-compose
+    networks:
+        - movie-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: movie
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: samsamsam
+    ports:
+      - "5432:5432"
+    networks:
+        - movie-network
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  front:
+    image: epita/movie-app-front
+    ports:
+      - "7894:4200"
+    networks:
+        - movie-network
+    restart: unless-stopped
+networks:
+    movie-network:
